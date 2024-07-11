@@ -15,7 +15,7 @@ public class User {
     private String gold;
     boolean loggedInSituation = false;
     int lostLogIn = 0;
-    public ArrayList<ActiveCards> activeCards;
+    public ArrayList <ActiveCards> activeCards;
     public ArrayList <PassiveCards> passiveCards;
     public User(String username, String password, String nickname, String email) {
         this.username = username;
@@ -29,15 +29,15 @@ public class User {
         this.activeCards = new ArrayList<>();
         this.passiveCards = new ArrayList<>();
     }
+    public void setPasswordRecoveryQuestion(String passwordRecoveryQuestion, String passwordRecoveryQuestionNum) {
+        this.passwordRecoveryQuestion = passwordRecoveryQuestion;
+        this.passwordRecoveryQuestionNum = passwordRecoveryQuestionNum;
+    }
     public String getUsername() {
         return username;
     }
     public String getPassword() {
         return password;
-    }
-    public void setPasswordRecoveryQuestion(String passwordRecoveryQuestion, String passwordRecoveryQuestionNum) {
-        this.passwordRecoveryQuestion = passwordRecoveryQuestion;
-        this.passwordRecoveryQuestionNum = passwordRecoveryQuestionNum;
     }
     public String getPasswordRecoveryQuestion() {
         return passwordRecoveryQuestion;
@@ -64,26 +64,10 @@ public class User {
                         "* 2-What is your favourite color ?\n" +
                         "* 3-What was the name of your first pet?";
     }
-    public static String showMain() {
-        return
-                "You have entered Main Menu. Please choose your next move :\n" +
-                        "* 1-Game Menu \n" +
-                        "* 2-Show Cards \n" +
-                        "* 3-Game History \n" +
-                        "* 4-Shop Menu \n" +
-                        "* 5-Profile Menu \n" +
-                        "* 6-Log Out \n";
-    }
-    public static String chooseMode() {
-        return
-                "Choose your mode that you want to play :\n" +
-                        "* 1- 1 VS 1 :\n" +
-                        "* 2- Gambling :\n";
-    }
     @Override
     public String toString() {
         return
-                        "username = " + username + '\'' +
+                "username = " + username + '\'' +
                         "password = " + password + '\'' +
                         "nickname = " + nickname + '\'' +
                         "email = " + email + '\'';
